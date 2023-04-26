@@ -4,7 +4,11 @@
  */
 package Controlador;
 
+import Model.Medicamento;
 import Model.Model_Medicamento;
+import java.awt.Dimension;
+import static java.awt.Frame.MAXIMIZED_BOTH;
+import javax.swing.JOptionPane;
 import view.Pedido;
 import view.ResumenPedido;
 
@@ -12,51 +16,86 @@ import view.ResumenPedido;
  *
  * @author OWNER
  */
-public class Control_Medicamento {
-    Pedido Vw_pedido = new Pedido();
+public class Control_Medicamento extends javax.swing.JFrame{
+    Pedido vista;
     ResumenPedido Vw_rspedido = new ResumenPedido();
     Model_Medicamento Md_medicamento = new Model_Medicamento();
-    boolean valido;
+    boolean valido= true;
     
     String sucursal = "";
     String distibuidor = "";
+    String nombre="";
+    String cantidad="";
+    String tipo="";
+    int cantint=0;
+
+    public Control_Medicamento(Pedido vista) {
+        
+        this.vista = vista;
+        this.vista.setLocationRelativeTo(null);
+        this.vista.setVisible(true);
+        
+        iniciaControl();
+        
+    }
+    
+    
     
     public void iniciaControl(){
-        Vw_pedido.setVisible(true);
-        Vw_pedido.getBtnOK().addActionListener(l-> rgdatos());
+        vista.getBtnOK().addActionListener(l-> rgdatos());
     }
     
     public void rgdatos(){
         if(valido){
             
-            if(Vw_pedido.getRdbCemefar().isSelected()){
+            if(vista.getRdbCemefar().isSelected()){
                 distibuidor = "CEMEFAR";
-            }else if(Vw_pedido.getRdbCofarma().isSelected()){
+            }else if(vista.getRdbCofarma().isSelected()){
                 distibuidor = "COFARMA";
-            }else if(Vw_pedido.getRdbEmpsephar().isSelected()){
+            }else if(vista.getRdbEmpsephar().isSelected()){
                 distibuidor = "EMPSEPHAR";
             }
             
+           
 
-            if(Vw_pedido.getCbxPrincipal().isSelected()){
+            if(!vista.getCbxPrincipal().isSelected() && !vista.getCbxSecundario().isSelected()){
+                JOptionPane.showMessageDialog(null, "debe seleccionar uno o ambas");
+                sucursal = "";
+            }else if(vista.getCbxPrincipal().isSelected()){
                 sucursal = "Calle de la Rosa n. 28";
-            } else if(Vw_pedido.getCbxSecundario().isSelected()){
+            } else if(vista.getCbxSecundario().isSelected()){
                 sucursal = "Calle Alcazabilla n. 3";
-            } else if(Vw_pedido.getCbxPrincipal().isSelected() && Vw_pedido.getCbxSecundario().isSelected()){
-                sucursal = "Para la farmacia situada en Calle de la Rosa n.28 y para la situada en Calle Alcazabilla n.3";
+            } else if(vista.getCbxPrincipal().isSelected() && vista.getCbxSecundario().isSelected()){
+                sucursal = "Calle de la Rosa n.28 y para la Calle Alcazabilla n.3";
+            }
+       
+            
+            nombre = vista.getTxtNombreM().getText();
+            String seleccion="Seleccione";
+            if(vista.getCbxTipo().getSelectedItem()==seleccion){
+                JOptionPane.showMessageDialog(null, "debe seleccionar el tipo de medicamento");
+            }else{
+                tipo =(String) vista.getCbxTipo().getSelectedItem();
             }
             
-            Md_medicamento.registrarMedicamento(Vw_pedido.getTxtNombreM().getText().toString(), Vw_pedido.getCbxTipo().getSelectedItem().toString(), 
-                   Integer.parseInt(Vw_pedido.getTxtCantidadP().toString()), distibuidor, sucursal);
+            cantidad = vista.getTxtCantidadP().getText();
+            cantint = Integer.parseInt(cantidad);
+      
+            
+            Md_medicamento.registrarMedicamento(nombre ,  tipo, cantint , distibuidor, sucursal);
+            System.out.println(nombre +" "+ tipo +" "+ cantint+" "+ distibuidor +" "+ sucursal);
         }else{
             
         }
+        
+        ResumenPedido ped = new ResumenPedido();
+        Control_ResumenPedido cont = new Control_ResumenPedido(ped);
     }
     
     public void mostrarRsPedido(){
         Vw_rspedido.setTitle(distibuidor);
         
-        Vw_rspedido.getjLabelCantidad().setText(Vw_pedido.getTxtCantidadP().toString());
-        Vw_rspedido.getJlMedicamento().setText(Vw_pedido.getTxtNombreM().toString());
+        Vw_rspedido.getjLabelCantidad().setText(vista.getTxtCantidadP().toString());
+        Vw_rspedido.getJlMedicamento().setText(vista.getTxtNombreM().toString());
     }
 }

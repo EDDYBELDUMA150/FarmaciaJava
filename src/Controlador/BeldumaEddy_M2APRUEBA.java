@@ -8,6 +8,7 @@ import Model.Medicamento;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import view.Pedido;
 
 /**
  *
@@ -16,7 +17,7 @@ import java.util.Scanner;
 public class BeldumaEddy_M2APRUEBA {
 
     public static void main(String[] args) {
-        Control_Medicamento cont = new Control_Medicamento();
-        cont.iniciaControl();
+        Pedido ped = new Pedido();
+        Control_Medicamento cont = new Control_Medicamento(ped);
     }
 }
