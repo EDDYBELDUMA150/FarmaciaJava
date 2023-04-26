@@ -5,6 +5,13 @@
  */
 package view;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Shalva
@@ -44,20 +51,18 @@ public class Pedido extends javax.swing.JFrame {
         cbxPrincipal = new javax.swing.JCheckBox();
         cbxSecundario = new javax.swing.JCheckBox();
         btnOK = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Pedido");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("•Nombre del Medicamento");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
@@ -65,7 +70,6 @@ public class Pedido extends javax.swing.JFrame {
         jPanel1.add(txtNombreM, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 200, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("•Tipo del Medicamento");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
@@ -73,7 +77,6 @@ public class Pedido extends javax.swing.JFrame {
         jPanel1.add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("•Cantidad del Producto");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
@@ -81,7 +84,6 @@ public class Pedido extends javax.swing.JFrame {
         jPanel1.add(txtCantidadP, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 200, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("•Distribuidor Farmacéutico ");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
 
@@ -98,7 +100,6 @@ public class Pedido extends javax.swing.JFrame {
         jPanel1.add(RdbCemefar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("•Sucursal");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, -1, -1));
 
@@ -111,12 +112,6 @@ public class Pedido extends javax.swing.JFrame {
         btnOK.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnOK.setText("OK");
         jPanel1.add(btnOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 680, -1, -1));
-
-        btnSalir.setBackground(new java.awt.Color(102, 0, 0));
-        btnSalir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalir.setText("X");
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/0cdb31fe5dbaceca18479548d145516b.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -133,42 +128,96 @@ public class Pedido extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Pedido().setVisible(true);
-            }
-        });
+    public JRadioButton getRdbCemefar() {
+        return RdbCemefar;
     }
+
+    public void setRdbCemefar(JRadioButton RdbCemefar) {
+        this.RdbCemefar = RdbCemefar;
+    }
+
+    public JRadioButton getRdbCofarma() {
+        return RdbCofarma;
+    }
+
+    public void setRdbCofarma(JRadioButton RdbCofarma) {
+        this.RdbCofarma = RdbCofarma;
+    }
+
+    public JRadioButton getRdbEmpsephar() {
+        return RdbEmpsephar;
+    }
+
+    public void setRdbEmpsephar(JRadioButton RdbEmpsephar) {
+        this.RdbEmpsephar = RdbEmpsephar;
+    }
+
+    public ButtonGroup getBtnGDistribuidor() {
+        return btnGDistribuidor;
+    }
+
+    public void setBtnGDistribuidor(ButtonGroup btnGDistribuidor) {
+        this.btnGDistribuidor = btnGDistribuidor;
+    }
+
+    public JButton getBtnOK() {
+        return btnOK;
+    }
+
+    public void setBtnOK(JButton btnOK) {
+        this.btnOK = btnOK;
+    }
+
+    public JCheckBox getCbxPrincipal() {
+        return cbxPrincipal;
+    }
+
+    public void setCbxPrincipal(JCheckBox cbxPrincipal) {
+        this.cbxPrincipal = cbxPrincipal;
+    }
+
+    public JCheckBox getCbxSecundario() {
+        return cbxSecundario;
+    }
+
+    public void setCbxSecundario(JCheckBox cbxSecundario) {
+        this.cbxSecundario = cbxSecundario;
+    }
+
+    public JComboBox<String> getCbxTipo() {
+        return cbxTipo;
+    }
+
+    public void setCbxTipo(JComboBox<String> cbxTipo) {
+        this.cbxTipo = cbxTipo;
+    }
+
+    public JTextField getTxtCantidadP() {
+        return txtCantidadP;
+    }
+
+    public void setTxtCantidadP(JTextField txtCantidadP) {
+        this.txtCantidadP = txtCantidadP;
+    }
+
+    public JTextField getTxtNombreM() {
+        return txtNombreM;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public void setTxtNombreM(JTextField txtNombreM) {
+        this.txtNombreM = txtNombreM;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton RdbCemefar;
@@ -176,7 +225,6 @@ public class Pedido extends javax.swing.JFrame {
     private javax.swing.JRadioButton RdbEmpsephar;
     private javax.swing.ButtonGroup btnGDistribuidor;
     private javax.swing.JButton btnOK;
-    private javax.swing.JButton btnSalir;
     private javax.swing.JCheckBox cbxPrincipal;
     private javax.swing.JCheckBox cbxSecundario;
     private javax.swing.JComboBox<String> cbxTipo;
