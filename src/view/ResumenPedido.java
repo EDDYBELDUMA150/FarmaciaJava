@@ -50,7 +50,7 @@ public class ResumenPedido extends javax.swing.JFrame {
 
         jltitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jltitulo.setText("Informacion de pedido");
-        jPanel1.add(jltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+        jPanel1.add(jltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
 
         jLabelCantidad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelCantidad.setForeground(new java.awt.Color(0, 102, 102));
@@ -61,10 +61,10 @@ public class ResumenPedido extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
 
         jlMedicamento.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jPanel1.add(jlMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 130, 20));
+        jPanel1.add(jlMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 180, 20));
 
         jltipomedi.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jPanel1.add(jltipomedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 100, 20));
+        jPanel1.add(jltipomedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 120, 20));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setText("•");
@@ -76,7 +76,7 @@ public class ResumenPedido extends javax.swing.JFrame {
 
         jlsucursa.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jlsucursa.setForeground(new java.awt.Color(0, 102, 102));
-        jPanel1.add(jlsucursa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 440, 20));
+        jPanel1.add(jlsucursa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 480, 20));
 
         btenviar.setBackground(new java.awt.Color(153, 255, 0));
         btenviar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -92,7 +92,7 @@ public class ResumenPedido extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

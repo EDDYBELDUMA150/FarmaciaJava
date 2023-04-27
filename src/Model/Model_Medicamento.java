@@ -14,7 +14,7 @@ public class Model_Medicamento {
     private ArrayList<Medicamento> list_medic_frames = new ArrayList<Medicamento>();
     private ArrayList<Medicamento> list_medic_regi = new ArrayList<Medicamento>();
     Medicamento md = new Medicamento();
-    private static int indx = 0;
+    private int indx;
 
     public ArrayList<Medicamento> getList_medic() {
         return list_medic_frames;
@@ -32,12 +32,12 @@ public class Model_Medicamento {
         this.list_medic_regi = list_medic_regi;
     }
     
-    public void obtenerMedicament(String nombre, String tipo, int cantidad, String distribuidor, String sucursal){
-        list_medic_frames.add(new Medicamento(nombre, tipo, cantidad, distribuidor, sucursal));
+    public void obtenerMedicament(String nombre, String tipo, int cantidad, String distribuidor, String sucursal, int indexrecorr){
+        list_medic_frames.add(new Medicamento(nombre, tipo, cantidad, distribuidor, sucursal, indexrecorr));
     }
     
-    public void guardarMedicamento(String nombre, String tipo, int cantidad, String distribuidor, String sucursal){
-        list_medic_frames.add(new Medicamento(nombre, tipo, cantidad, distribuidor, sucursal));
+    public void guardarMedicamento(String nombre, String tipo, int cantidad, String distribuidor, String sucursal, int indexrecorr){
+        list_medic_regi.add(new Medicamento(nombre, tipo, cantidad, distribuidor, sucursal, indexrecorr));
     }
 
     public int getIndx() {
@@ -45,8 +45,10 @@ public class Model_Medicamento {
     }
 
     public void setIndx(int indx) {
-        Model_Medicamento.indx = indx;
+        this.indx = indx;
     }
+
+    
 
     @Override
     public String toString() {

@@ -14,16 +14,18 @@ public class Medicamento {
     private int Md_cantidad;
     private String Md_distribuidor;
     private String Md_sucursal;
+    private int indexrecorrido = 0;
 
     public Medicamento() {
     }
 
-    public Medicamento(String Md_nombre, String Md_tipo, int Md_cantidad, String Md_distribuidor, String Md_sucursal) {
+    public Medicamento(String Md_nombre, String Md_tipo, int Md_cantidad, String Md_distribuidor, String Md_sucursal, int indexrecorrido) {
         this.Md_nombre = Md_nombre;
         this.Md_tipo = Md_tipo;
         this.Md_cantidad = Md_cantidad;
         this.Md_distribuidor = Md_distribuidor;
         this.Md_sucursal = Md_sucursal;
+        this.indexrecorrido = indexrecorrido;
     }
 
     public String getMd_nombre() {
@@ -64,6 +66,14 @@ public class Medicamento {
 
     public void setMd_sucursal(String Md_sucursal) {
         this.Md_sucursal = Md_sucursal;
+    }
+
+    public int getIndexrecorrido() {
+        return indexrecorrido;
+    }
+
+    public void setIndexrecorrido(int indexrecorrido) {
+        this.indexrecorrido = indexrecorrido;
     }
 
     @Override

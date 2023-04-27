@@ -20,6 +20,7 @@ public class Control_ResumenPedido extends javax.swing.JFrame {
     Pedido Vw_rspedido = new Pedido();
     Model_Medicamento md_medicamento;
     boolean valido = true;
+    int i;
 
     public Control_ResumenPedido(ResumenPedido vista, Model_Medicamento md_medicamento, Pedido Vw_rspedido) {
 
@@ -30,37 +31,42 @@ public class Control_ResumenPedido extends javax.swing.JFrame {
         this.vistaRS.setVisible(true);
 
         iniciaControl();
+        System.out.println(md_medicamento.getList_medic().toString());
     }
+    
 
     public void iniciaControl() {
         //System.out.println(md_medicamento.getList_medic().toString());
-        vistaRS.getJlMedicamento().setText(md_medicamento.getList_medic().get(md_medicamento.getIndx()).getMd_nombre().toString());
-        vistaRS.getjLabelCantidad().setText(String.valueOf(md_medicamento.getList_medic().get(md_medicamento.getIndx()).getMd_cantidad()).toString());
-        vistaRS.getJlsucursa().setText(md_medicamento.getList_medic().get(md_medicamento.getIndx()).getMd_sucursal().toString());
-        vistaRS.getJltipomedi().setText(md_medicamento.getList_medic().get(md_medicamento.getIndx()).getMd_tipo().toString());
-        vistaRS.setTitle(md_medicamento.getList_medic().get(md_medicamento.getIndx()).getMd_distribuidor().toString());
-        vistaRS.getJltitulo().setText(md_medicamento.getList_medic().get(md_medicamento.getIndx()).getMd_distribuidor().toString());
+        mostrarDatos();
 
         vistaRS.getBtcancelar().addActionListener(l -> botonCancelar());
         vistaRS.getBtenviar().addActionListener(l->botonAceptar());
+        
+        
     }
 
     public void botonCancelar() {
         vistaRS.dispose();
+        
+        i++;
     }
 
     public void botonAceptar() {
-        String sucursal = md_medicamento.getList_medic().get(0).getMd_sucursal().toString();
-        String distibuidor = md_medicamento.getList_medic().get(0).getMd_distribuidor().toString();
-        String nombre = md_medicamento.getList_medic().get(0).getMd_nombre().toString();
-        String tipo = md_medicamento.getList_medic().get(0).getMd_tipo().toString();
-        int cantint = md_medicamento.getList_medic().get(0).getMd_cantidad();
+        i = md_medicamento.getIndx();
+        md_medicamento.setIndx(i);
+        String sucursal = md_medicamento.getList_medic().get(md_medicamento.getIndx()-1).getMd_sucursal().toString();
+        String distibuidor = md_medicamento.getList_medic().get(md_medicamento.getIndx()-1).getMd_distribuidor().toString();
+        String nombre = md_medicamento.getList_medic().get(md_medicamento.getIndx()-1).getMd_nombre().toString();
+        String tipo = md_medicamento.getList_medic().get(md_medicamento.getIndx()-1).getMd_tipo().toString();
+        int cantint = md_medicamento.getList_medic().get(md_medicamento.getIndx()-1).getMd_cantidad();
 
-        md_medicamento.guardarMedicamento(nombre, tipo, cantint, distibuidor, sucursal);
+        md_medicamento.guardarMedicamento(nombre, tipo, cantint, distibuidor, sucursal, i++);
+        
         JOptionPane.showMessageDialog(null, "Pedido Enviado");
         limpiar();
         vistaRS.dispose();
-
+        System.out.println(md_medicamento.getList_medic_regi().toString());
+        i++;
     }
     
     public void limpiar(){
@@ -70,5 +76,16 @@ public class Control_ResumenPedido extends javax.swing.JFrame {
         Vw_rspedido.getCbxSecundario().setSelected(false);
         Vw_rspedido.getCbxTipo().setSelectedIndex(0);
         Vw_rspedido.getBtnGDistribuidor().clearSelection();
+    }
+    
+    public void mostrarDatos(){
+        i = md_medicamento.getIndx();
+        md_medicamento.setIndx(i);
+        vistaRS.getJlMedicamento().setText(md_medicamento.getList_medic().get(md_medicamento.getList_medic().size()-1).getMd_nombre().toString());
+        vistaRS.getjLabelCantidad().setText(String.valueOf(md_medicamento.getList_medic().get(md_medicamento.getList_medic().size()-1).getMd_cantidad()).toString());
+        vistaRS.getJlsucursa().setText(md_medicamento.getList_medic().get(md_medicamento.getList_medic().size()-1).getMd_sucursal().toString());
+        vistaRS.getJltipomedi().setText(md_medicamento.getList_medic().get(md_medicamento.getList_medic().size()-1).getMd_tipo().toString());
+        vistaRS.setTitle(md_medicamento.getList_medic().get(md_medicamento.getList_medic().size()-1).getMd_distribuidor().toString());
+        vistaRS.getJltitulo().setText(md_medicamento.getList_medic().get(md_medicamento.getList_medic().size()-1).getMd_distribuidor().toString());
     }
 }
