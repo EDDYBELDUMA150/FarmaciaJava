@@ -14,7 +14,7 @@ import view.Pedido;
  *
  * @author 0705590545 EDDY BELDUMA
  */
-public class BeldumaEddy_M2APRUEBA {
+public class Farmacia_5b {
 
     public static void main(String[] args) {
         Pedido ped = new Pedido();

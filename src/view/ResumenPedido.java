@@ -5,6 +5,7 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
@@ -38,51 +39,54 @@ public class ResumenPedido extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jlsucursa = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btenviar = new javax.swing.JButton();
+        btcancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jltitulo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jltitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jltitulo.setText("Informacion de pedido");
-        jPanel1.add(jltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
+        jPanel1.add(jltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
-        jLabelCantidad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jPanel1.add(jLabelCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 20));
+        jLabelCantidad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelCantidad.setForeground(new java.awt.Color(0, 102, 102));
+        jPanel1.add(jLabelCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 40, 20));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setText("unidades del ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
 
-        jlMedicamento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jPanel1.add(jlMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 110, 20));
+        jlMedicamento.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jPanel1.add(jlMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 130, 20));
 
-        jltipomedi.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jPanel1.add(jltipomedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 120, 20));
+        jltipomedi.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jPanel1.add(jltipomedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 100, 20));
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setText("•");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 20, 20));
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel5.setText("Para la Farmacia situada en");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel5.setText("Para la Farmacia situada en:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
-        jlsucursa.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jPanel1.add(jlsucursa, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 180, 20));
+        jlsucursa.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jlsucursa.setForeground(new java.awt.Color(0, 102, 102));
+        jPanel1.add(jlsucursa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 440, 20));
 
-        jButton1.setBackground(new java.awt.Color(153, 255, 0));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setText("Enviar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        btenviar.setBackground(new java.awt.Color(153, 255, 0));
+        btenviar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btenviar.setText("Enviar");
+        jPanel1.add(btenviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(153, 255, 0));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton2.setText("Cancelar");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, -1, -1));
+        btcancelar.setBackground(new java.awt.Color(153, 255, 0));
+        btcancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btcancelar.setText("Cancelar");
+        jPanel1.add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,11 +148,27 @@ public class ResumenPedido extends javax.swing.JFrame {
     public void setJltitulo(JLabel jltitulo) {
         this.jltitulo = jltitulo;
     }
+
+    public JButton getBtcancelar() {
+        return btcancelar;
+    }
+
+    public void setBtcancelar(JButton btcancelar) {
+        this.btcancelar = btcancelar;
+    }
+
+    public JButton getBtenviar() {
+        return btenviar;
+    }
+
+    public void setBtenviar(JButton btenviar) {
+        this.btenviar = btenviar;
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btcancelar;
+    private javax.swing.JButton btenviar;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

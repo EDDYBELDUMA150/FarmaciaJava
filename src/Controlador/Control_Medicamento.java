@@ -18,7 +18,7 @@ import view.ResumenPedido;
  */
 public class Control_Medicamento extends javax.swing.JFrame{
     Pedido vista;
-    ResumenPedido Vw_rspedido = new ResumenPedido();
+    ResumenPedido ped = new ResumenPedido();
     Model_Medicamento Md_medicamento = new Model_Medicamento();
     boolean valido= true;
     
@@ -46,7 +46,11 @@ public class Control_Medicamento extends javax.swing.JFrame{
     }
     
     public void rgdatos(){
-        if(valido){
+        
+        nombre = vista.getTxtNombreM().getText().toString();
+        cantidad = vista.getTxtCantidadP().getText().toString();        
+                    
+        if(validarCampos(valido)){
             
             if(vista.getRdbCemefar().isSelected()){
                 distibuidor = "CEMEFAR";
@@ -54,23 +58,22 @@ public class Control_Medicamento extends javax.swing.JFrame{
                 distibuidor = "COFARMA";
             }else if(vista.getRdbEmpsephar().isSelected()){
                 distibuidor = "EMPSEPHAR";
+            } else {
+                JOptionPane.showMessageDialog(null, "Debe seleccionar uno");
             }
             
-           
-
-            if(!vista.getCbxPrincipal().isSelected() && !vista.getCbxSecundario().isSelected()){
-                JOptionPane.showMessageDialog(null, "debe seleccionar uno o ambas");
-                sucursal = "";
+            
+            if(vista.getCbxPrincipal().isSelected() && vista.getCbxSecundario().isSelected()){
+                sucursal = "Calle de la Rosa n.28 y para la Calle Alcazabilla n.3";
             }else if(vista.getCbxPrincipal().isSelected()){
                 sucursal = "Calle de la Rosa n. 28";
             } else if(vista.getCbxSecundario().isSelected()){
                 sucursal = "Calle Alcazabilla n. 3";
-            } else if(vista.getCbxPrincipal().isSelected() && vista.getCbxSecundario().isSelected()){
-                sucursal = "Calle de la Rosa n.28 y para la Calle Alcazabilla n.3";
+            } else {
+                JOptionPane.showMessageDialog(null, "Debe seleccionar uno o ambas");
             }
        
             
-            nombre = vista.getTxtNombreM().getText();
             String seleccion="Seleccione";
             if(vista.getCbxTipo().getSelectedItem()==seleccion){
                 JOptionPane.showMessageDialog(null, "debe seleccionar el tipo de medicamento");
@@ -78,24 +81,41 @@ public class Control_Medicamento extends javax.swing.JFrame{
                 tipo =(String) vista.getCbxTipo().getSelectedItem();
             }
             
-            cantidad = vista.getTxtCantidadP().getText();
             cantint = Integer.parseInt(cantidad);
-      
-            
-            Md_medicamento.registrarMedicamento(nombre ,  tipo, cantint , distibuidor, sucursal);
-            System.out.println(nombre +" "+ tipo +" "+ cantint+" "+ distibuidor +" "+ sucursal);
+  
+            Md_medicamento.obtenerMedicament(nombre ,  tipo, cantint , distibuidor, sucursal);
+            Control_ResumenPedido cont = new Control_ResumenPedido(ped, Md_medicamento, vista);
         }else{
-            
+            JOptionPane.showMessageDialog(null, "Hay campos con valores incorrectos o estan vacios");
+            while (valido==false) {
+                int i = 0;
+                i++;
+                Md_medicamento.setIndx(i);
+            }
         }
-        
-        ResumenPedido ped = new ResumenPedido();
-        Control_ResumenPedido cont = new Control_ResumenPedido(ped);
+            
+        //System.out.println(Md_medicamento.getList_medic().toString());
     }
     
-    public void mostrarRsPedido(){
-        Vw_rspedido.setTitle(distibuidor);
-        
-        Vw_rspedido.getjLabelCantidad().setText(vista.getTxtCantidadP().toString());
-        Vw_rspedido.getJlMedicamento().setText(vista.getTxtNombreM().toString());
+    public boolean validarCampos(boolean val){
+        if (vista.getTxtNombreM().equals("") || !validarNombre(nombre)) {
+            val = false;
+        }
+        if (vista.getTxtCantidadP().equals("") || !validarNumero(cantidad)) {
+            val = false;
+        }
+        return val;
+    }
+    
+    public static boolean validarNombre(String nombre) {
+        // Permitir letras mayúsculas y minúsculas y espacios
+        String regex = "[a-zA-Z]+";
+        return nombre.trim().matches(regex);
+    }
+    
+    public static boolean validarNumero(String number) {
+        // Permitir letras mayúsculas y minúsculas y espacios
+        String regex = "^\\d{1,5}$";
+        return number.trim().matches(regex);
     }
 }

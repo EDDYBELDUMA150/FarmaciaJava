@@ -64,28 +64,28 @@ public class Pedido extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setText("•Nombre del Medicamento");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
 
         txtNombreM.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jPanel1.add(txtNombreM, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 200, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("•Tipo del Medicamento");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Analgésico", "Analéptico", "Anestésico", "Antiácido", "Antidepresivo", "Antibióticos" }));
         jPanel1.add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setText("•Cantidad del Producto");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
 
         txtCantidadP.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jPanel1.add(txtCantidadP, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 200, -1));
+        jPanel1.add(txtCantidadP, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 100, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setText("•Distribuidor Farmacéutico ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, -1, -1));
 
         btnGDistribuidor.add(RdbCofarma);
         RdbCofarma.setText("COFARMA");
@@ -101,17 +101,17 @@ public class Pedido extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel7.setText("•Sucursal");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 540, 70, 30));
 
         cbxPrincipal.setText("PRINCIPAL ");
-        jPanel1.add(cbxPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, -1, -1));
+        jPanel1.add(cbxPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, -1, -1));
 
         cbxSecundario.setText("SECUNDARIA");
-        jPanel1.add(cbxSecundario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, -1, -1));
+        jPanel1.add(cbxSecundario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, -1, -1));
 
         btnOK.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnOK.setText("OK");
-        jPanel1.add(btnOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 680, -1, -1));
+        jPanel1.add(btnOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 670, 100, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/0cdb31fe5dbaceca18479548d145516b.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
