@@ -43,7 +43,6 @@ public class Control_Medicamento extends javax.swing.JFrame {
 
     public void iniciaControl() {
         vista.getBtnOK().addActionListener(l -> rgdatos());
-        
     }
 
     public void rgdatos() {
@@ -62,7 +61,7 @@ public class Control_Medicamento extends javax.swing.JFrame {
            
         }
 
-        System.out.println(Md_medicamento.getList_medic_regi().toString());
+        //System.out.println(Md_medicamento.getList_medic_regi().toString());
         Md_medicamento.setIndx(i);
         //System.out.println(Md_medicamento.getList_medic().toString());
     }

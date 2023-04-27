@@ -41,6 +41,8 @@ public class ResumenPedido extends javax.swing.JFrame {
         jlsucursa = new javax.swing.JLabel();
         btenviar = new javax.swing.JButton();
         btcancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jNumeroPedido = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -50,7 +52,7 @@ public class ResumenPedido extends javax.swing.JFrame {
 
         jltitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jltitulo.setText("Informacion de pedido");
-        jPanel1.add(jltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
+        jPanel1.add(jltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
         jLabelCantidad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelCantidad.setForeground(new java.awt.Color(0, 102, 102));
@@ -87,6 +89,14 @@ public class ResumenPedido extends javax.swing.JFrame {
         btcancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btcancelar.setText("Cancelar");
         jPanel1.add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("PEDIDO N° ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jNumeroPedido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jNumeroPedido.setText("00");
+        jPanel1.add(jNumeroPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 20, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,15 +174,25 @@ public class ResumenPedido extends javax.swing.JFrame {
     public void setBtenviar(JButton btenviar) {
         this.btenviar = btenviar;
     }
+
+    public JLabel getjNumeroPedido() {
+        return jNumeroPedido;
+    }
+
+    public void setjNumeroPedido(JLabel jNumeroPedido) {
+        this.jNumeroPedido = jNumeroPedido;
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btcancelar;
     private javax.swing.JButton btenviar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelCantidad;
+    private javax.swing.JLabel jNumeroPedido;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlMedicamento;
     private javax.swing.JLabel jlsucursa;
